@@ -1,7 +1,7 @@
 {
-  "name": "treemap",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "A map application for everything trees",
+  "description": "A backend for eudocia",
   "main": "src/index.js",
   "repository": "https://github.com/vedant1202/treemap.git",
   "author": "Vedant Nandoskar <vedant.nandoskar@gmail.com>",
