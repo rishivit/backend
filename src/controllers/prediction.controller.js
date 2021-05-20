@@ -3,7 +3,11 @@ const { pick } = require('lodash');
 const ApiError = require('../utils/ApiError');
 const catchAsync = require('../utils/catchAsync');
 const { predictionService } = require('../services');
-const { getPredictionFile, getPredictionRecommendationsForUser, getPredictionRecommendationsForGeneral } = require('./predictions/prediction-render.controller');
+const {
+  getPredictionFile,
+  getPredictionRecommendationsForUser,
+  getPredictionRecommendationsForGeneral,
+} = require('./predictions/prediction-render.controller');
 
 const createPrediction = catchAsync(async (req, res) => {
   const predictions = [];
@@ -50,7 +54,7 @@ const getPredictionRecommendationsByUserID = catchAsync(async (req, res) => {
   const predictions = {
     dark: darkPredictions,
     light: lightPredictions,
-  }; 
+  };
 
   if (!predictions) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Predictions not found');
@@ -64,7 +68,7 @@ const getPredictionRecommendationsGeneral = catchAsync(async (req, res) => {
   const predictions = {
     dark: darkPredictions,
     light: lightPredictions,
-  }; 
+  };
 
   if (!predictions) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Predictions not found');

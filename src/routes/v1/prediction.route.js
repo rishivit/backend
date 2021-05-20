@@ -31,7 +31,7 @@ router
     auth('getPredictions'),
     validate(predictionValidation.getPredictionRecommendationsGeneral),
     predictionController.getPredictionRecommendationsGeneral
-);
+  );
 
 router
   .route('/recommendations/user')
@@ -39,7 +39,7 @@ router
     auth('getPredictions'),
     validate(predictionValidation.getPredictionRecommendationsForUser),
     predictionController.getPredictionRecommendationsByUserID
-);
+  );
 
 module.exports = router;
 

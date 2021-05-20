@@ -103,9 +103,21 @@ const getPredictionRecommendationsForUser = (userId, type) => {
       if (randomNumbers.indexOf(r) === -1) randomNumbers.push(r);
     }
     if (type === 'dark') {
-      return [defaultDarkPreds[randomNumbers[0]], defaultDarkPreds[randomNumbers[1]], defaultDarkPreds[randomNumbers[2]], defaultDarkPreds[randomNumbers[3]], defaultDarkPreds[randomNumbers[4]]];
+      return [
+        defaultDarkPreds[randomNumbers[0]],
+        defaultDarkPreds[randomNumbers[1]],
+        defaultDarkPreds[randomNumbers[2]],
+        defaultDarkPreds[randomNumbers[3]],
+        defaultDarkPreds[randomNumbers[4]],
+      ];
     }
-    return [defaultLightPreds[randomNumbers[0]], defaultLightPreds[randomNumbers[1]], defaultLightPreds[randomNumbers[2]], defaultLightPreds[randomNumbers[3]], defaultLightPreds[randomNumbers[4]]];
+    return [
+      defaultLightPreds[randomNumbers[0]],
+      defaultLightPreds[randomNumbers[1]],
+      defaultLightPreds[randomNumbers[2]],
+      defaultLightPreds[randomNumbers[3]],
+      defaultLightPreds[randomNumbers[4]],
+    ];
   } else {
     const randomNumbers = [];
     const files = [];
@@ -117,25 +129,37 @@ const getPredictionRecommendationsForUser = (userId, type) => {
       if (randomNumbers.indexOf(r) === -1) randomNumbers.push(r);
     }
     // const random = Math.floor(Math.random() * files.length);
-    return [files[randomNumbers[0]], files[randomNumbers[1]], files[randomNumbers[2]], files[randomNumbers[3]], files[randomNumbers[4]]];
+    return [
+      files[randomNumbers[0]],
+      files[randomNumbers[1]],
+      files[randomNumbers[2]],
+      files[randomNumbers[3]],
+      files[randomNumbers[4]],
+    ];
   }
 };
 
 const getPredictionRecommendationsForGeneral = (type) => {
-    const testFolder = path.join(__dirname, '../../dataset/', '/', type);  
-    const randomNumbers = [];
-    const files = [];
+  const testFolder = path.join(__dirname, '../../dataset/', '/', type);
+  const randomNumbers = [];
+  const files = [];
 
-    fs.readdirSync(testFolder).forEach((file) => {
+  fs.readdirSync(testFolder).forEach((file) => {
     files.push(file);
-    });
-    while (randomNumbers.length < 5) {
+  });
+  while (randomNumbers.length < 5) {
     const r = Math.floor(Math.random() * files.length);
     if (randomNumbers.indexOf(r) === -1) randomNumbers.push(r);
-    }
-    // const random = Math.floor(Math.random() * files.length);
-    return [files[randomNumbers[0]], files[randomNumbers[1]], files[randomNumbers[2]], files[randomNumbers[3]], files[randomNumbers[4]]];
-  };
+  }
+  // const random = Math.floor(Math.random() * files.length);
+  return [
+    files[randomNumbers[0]],
+    files[randomNumbers[1]],
+    files[randomNumbers[2]],
+    files[randomNumbers[3]],
+    files[randomNumbers[4]],
+  ];
+};
 
 module.exports = {
   getPredictionFile,
