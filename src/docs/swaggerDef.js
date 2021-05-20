@@ -4,7 +4,7 @@ const config = require('../config/config');
 const swaggerDef = {
   openapi: '3.0.0',
   info: {
-    title: 'node-express-mongoose-boilerplate API documentation',
+    title: 'Automated UI Generation Backend API Documentation',
     version,
     license: {
       name: 'MIT',
